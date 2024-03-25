@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        /* Ensure the video covers the entire viewport */
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        .myVideo {
+            object-fit: cover;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #videoContainer {
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .parallax-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .parallax-content h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0;
+        }
+
+        .video-active {
+            z-index: 2;
+        }
+
+        .video-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+        }
+
+        .parallax-content h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0;
+            font-size: 50px;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .container1 {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 5px;
+        }
+
+        .img-yurta {
+            max-width: 100%;
+            max-height: 100%;
+            grid-column: 1 / span 1;
+            margin: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .container1 h2 {
+            font-weight: bold;
+            grid-column: 2 / span 2;
+            margin-left: 40px;
+            /* left margin to create space between h2 and image */
+        }
+
+        .container1 p {
+            margin-left: 20px;
+            grid-column: 1 / span 3;
+            width: 100%;
+        }
+    </style>
+
+    <title>Language</title>
+    <link rel="icon" type="image/x-icon" href="fav.png">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark"
+        style="background: rgba(0, 0, 0, 0.5); color: white; position: fixed; z-index: 9; width: 100%;">
+        <a class="navbar-brand" href="#">Kazakh Culture</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <!-- 1st webpage -->
+                    <a class="nav-link" href="page1_new.html">Main <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <!-- 2nd webpage -->
+                    <a class="nav-link" href="page2_new.html">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Learn more
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- 3rd webpage -->
+                        <a class="dropdown-item" href="page3_new.html">Language</a>
+                        <!-- 4th webpage -->
+                        <a class="dropdown-item" href="page4_new.html">Values</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <!-- 5th webpage -->
+                    <a class="nav-link" href="page5_new.html">Quiz</a>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+
+    <div class="parallax">
+        <div id="videoContainer">
+            <div class="video-text parallax-content">
+                <h1>Language</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container1" style="width: 100%; position: relative; background-color: white; z-index: 5;">
+        <br>
+        <img class="img-yurta" src="https://celcar.indiana.edu/images/dscn5853.jpg">
+        <h2 style="font-size: 40px;">WHAT KIND OF LANGUAGE IS KAZAKH?</h2>
+        <p>Kazakh belongs to the Turkic group of languages, which includes languages such as Uzbek, Turkish, Uyghur, and
+            Tatar. Turkic languages have been spoken across vast territory from the Balkans to China for many centuries.
+            Kazakh is the most widely spoken language of the Kipchak sub-branch of the Turkic languages.</p>
+        <p>Kazakh is an agglutinative language in which suffixes that indicate only one meaning are attached to the word
+            stem one after another in a set order. Unlike some other Turkic languages, Kazakh also has a vigorous system
+            of vowel harmony in which the vowels of the suffixes change to fit the vowels in the stem. But Kazakh does
+            not have the difficulties that inflecting languages have with grammatical gender and multiple systems of
+            declension and conjugation.</p>
+        <p>The vocabulary of Kazakh has been influenced by Arabic, Persian, Mongolian, and Russian. However, after the
+            collapse of the Soviet Union, the Kazakh lexicon went through a major de-Russification process. As a result,
+            many Russian loanwords were replaced with new Kazakh ones.</p>
+    </div>
+    <div>
+        <br>
+        <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">WHAT ALPHABET DO KAZAKHS USE?</h2>
+        <p style="margin-left: 20px;">Kazakh belongs to the Turkic group of languages, which includes languages such as
+            Uzbek, Turkish, Uyghur, and
+            Tatar. Turkic languages have been spoken across vast territory from the Balkans to China for many centuries.
+            Kazakh is the most widely spoken language of the Kipchak sub-branch of the Turkic languages.</p>
+        <p style="margin-left: 20px;">Kazakh is an agglutinative language in which suffixes that indicate only one
+            meaning are attached to the word
+            stem one after another in a set order. Unlike some other Turkic languages, Kazakh also has a vigorous system
+            of vowel harmony in which the vowels of the suffixes change to fit the vowels in the stem. But Kazakh does
+            not have the difficulties that inflecting languages have with grammatical gender and multiple systems of
+            declension and conjugation.</p>
+        <p style="margin-left: 20px;">The vocabulary of Kazakh has been influenced by Arabic, Persian, Mongolian, and
+            Russian. However, after the
+            collapse of the Soviet Union, the Kazakh lexicon went through a major de-Russification process. As a result,
+            many Russian loanwords were replaced with new Kazakh ones.</p>
+    </div>
+    <div>
+        <br>
+        <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">SOME USEFUL PHRASES IN KAZAKH</h2>
+        <ul>
+            <li style="margin-left: 20px;">Сәлем. Менің атым Джон. /sal-YIM! myin-uhng ah-tuhm JOHN/ [sæliɘm, miɘnɘŋ
+                ɑtəm
+                dʐɔn] Hi. My name is John.</li>
+            <li style="margin-left: 20px;">Сенің атың кім? (inf) /siz-duhng ah-tuhng-uhz KUHM/ [sɘzdɘŋ ɑtʰəɴəz kʰɘm]
+                Сіздің
+                атыңыз кім? (f) /syin-uhng ah-tuhng KUHM/ [siɘnɘŋ ɑtʰəɴ kʰəm] What is your name?</li>
+            <li style="margin-left: 20px;">Қалың қалай? (inf) /Қалыңыз қалай? (f) /qah-luhng qah-LAYE/ /qah-luhng-uhz
+                qah-LAYE/ [qʰɑɫəɴ qʰɑɫɑj] / [qʰɑɫəɴəz qʰɑɫɑj] How are you doing?</li>
+            <li style="margin-left: 20px;">Мен сені сүйемін. /myin syin-uh soo-yee-IH-muhn/ [miɘn siɘnɘ sʉjiɘmɘn] I love
+                you.
+            </li>
+            <li style="margin-left: 20px;">Сенің атың әдемі екен. (inf) /syin-uhng ah-tuhng ae-DZYIM-uh yih-kyin/
+                [siɘnɘŋ
+                ɑtʰəɴ æʣiɘmɘ iɘkʰiɘn] Сіздің атыңыз әдемі екен. (f) /siz-duhng ah-tuhng-uhz ae-DZYIM-uh yih-kyin/
+                [sɘzdɘŋ
+                ɑtʰəɴəz æʣiɘmɘ iɘkʰiɘn] You have a beautiful horse.</li>
+            <li style="margin-left: 20px;">Әжетхана қайда? /ae-zhyit-khah-nah qaye-DAH/ [æʑiɘtχɑnɑ qʰɑjdɑ] Where is the
+                bathroom?</li>
+            <li style="margin-left: 20px;">Үлкен рахмет! /oohl-kyin rahkh-MYIT/ [ʉlkʰiɘn ɾɑχmiɘt] Thank you very much.
+            </li>
+            <li style="margin-left: 20px;">Сау болыңыз. /sau BWOL-luhng-uhz/ [sɑw buʊləɴəz] Good-bye.</li>
+        </ul>
+    </div>
+    <div>
+        <br>
+        <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">FIVE REASONS WHY YOU SHOULD LEARN MORE ABOUT
+            KAZAKH SPEAKERS AND THEIR LANGUAGE</h2>
+        <ol>
+            <li style="margin-left: 20px;">Kazakh is spoken as a first or second language by roughly 8 million people
+                throughout Central Asia, most notably in Kazakhstan, but also in China’s Xinjiang Uyghur Autonomous
+                Region, Mongolia, Tajikistan, Turkmenistan, Uzbekistan, and Afghanistan. A significant population of
+                Kazakh speakers can also be found in Russia and Turkey.</li>
+            <li style="margin-left: 20px;">A member of the Turkic language family, Kazakh shares many structural
+                similarities to languages such as Turkish, Altay, Uzbek, Uyghur, and Turkmen, as well as being largely
+                mutually intelligible with Kyrgyz.</li>
+            <li style="margin-left: 20px;">Kazakhstan is the largest country in Central Asia (at 1.05 mil sq miles, it
+                is also the 9th largest in the world), with the largest economy, the second largest population, and the
+                most trade with the United States. Business partnerships with Kazakhstan and the U.S. are growing,
+                creating a demand for Americans who can speak Kazakh.</li>
+            <li style="margin-left: 20px;">Kazakhs take great national pride in their Olympic athletes. Kazakhstan sent
+                115 athletes to the London 2012 Olympics and brought home seven gold medals, one silver, and one bronze!
+                This included Ilya Ilin defending his 2008 Bejing gold medal in weightlifting.</li>
+            <li style="margin-left: 20px;">Kazakhstan is home to the Baikonur Cosmodome, the world’s first and largest
+                space launch facility.</li>
+        </ol>
+        <br>
+    </div>
+    <footer>
+        <p>Author: Akbota Zhaksylyk<br>
+            <a href="mailto:220489@astanait.edu.kz">220489@astanait.edu.kz</a>
+        </p>
+    </footer>
+
+    <!-- for h1 text animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the h1 element
+            var h1Element = document.querySelector('.parallax-content h1');
+
+            // Apply initial styles
+            h1Element.style.opacity = '0';
+            h1Element.style.transform = 'translateY(-20px)';
+
+            // Trigger a reflow (force the browser to repaint)
+            h1Element.offsetHeight;
+
+            // Apply the transition styles for smooth animation
+            h1Element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+            // Apply the final styles for the end state (visible)
+            h1Element.style.opacity = '1';
+            h1Element.style.transform = 'translateY(0)';
+        });
+    </script>
+
+    <!-- to change videos -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('myVideo');
+            var videoSource = document.getElementById('videoSource');
+            var videoIndex = 0;
+            var videoList = ['v5.mp4'];
+            var transitionDuration = 4000; // 4 seconds per video
+            let isFirst = true;
+            let videoContainer = document.getElementById('videoContainer');
+            for (let video of videoList) {
+                const videoTag = document.createElement('video');
+                videoTag.autoplay = true;
+                videoTag.loop = true;
+                videoTag.muted = true;
+                videoTag.classList.add('myVideo');
+                if (isFirst) {
+                    videoTag.classList.add('video-active');
+                }
+                isFirst = false;
+                const source = document.createElement('source');
+                source.type = 'video/mp4';
+                source.src = video;
+                videoTag.appendChild(source);
+                videoContainer.appendChild(videoTag);
+            }
+
+            function preloadNextVideo() {
+                var nextVideoIndex = (videoIndex + 1) % videoList.length;
+                var nextVideo = new Image();
+                nextVideo.src = videoList[nextVideoIndex];
+            }
+
+            const videos = document.querySelectorAll('.myVideo');
+
+            setInterval(function () {
+                const activeVideo = document.querySelector('.video-active');
+                activeVideo.classList.remove('video-active');
+                videos[videoIndex].classList.add('video-active');
+                videoIndex++;
+                videoIndex %= videoList.length;
+            }, transitionDuration);
+            // Start the first video
+            // changeVideo();
+        });
+    </script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- to make dropdown on navbar clickable -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

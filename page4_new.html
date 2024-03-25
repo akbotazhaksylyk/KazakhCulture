@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        .myVideo {
+            object-fit: cover;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #videoContainer {
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .parallax-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .parallax-content h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0;
+        }
+        .video-active {
+            z-index: 2;
+        }
+
+        .video-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+        }
+
+        .parallax-content h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0;
+            font-size: 50px;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .container1 {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 5px;
+        }
+
+        .img-yurta {
+            max-width: 100%;
+            max-height: 100%;
+            grid-column: 1 / span 1;
+            margin: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .container1 h2 {
+            font-weight: bold;
+            grid-column: 2 / span 2;
+            margin-left: 40px;
+        }
+
+        .container1 p {
+            margin-left: 20px;
+            grid-column: 1 / span 3;
+            width: 100%;
+        }
+    </style>
+
+    <title>Values</title>
+    <link rel="icon" type="image/x-icon" href="fav.png">
+</head>
+
+<body>
+    <!-- <video autoplay muted loop id="myVideo">
+        <source id="video1" src="a2.mp4" type="video/mp4">
+        <p>Your browser does not support HTML5 video.</p>
+    </video> -->
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark"
+        style="background: rgba(0, 0, 0, 0.5); color: white; position: fixed; z-index: 9; width: 100%;">
+        <a class="navbar-brand" href="#">Kazakh Culture</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <!-- 1st webpage -->
+                    <a class="nav-link" href="page1_new.html">Main <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <!-- 2nd webpage -->
+                    <a class="nav-link" href="page2_new.html">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Learn more
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- 3rd webpage -->
+                        <a class="dropdown-item" href="page3_new.html">Language</a>
+                        <!-- 4th webpage -->
+                        <a class="dropdown-item" href="page4_new.html">Values</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <!-- 5th webpage -->
+                    <a class="nav-link" href="page5_new.html">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="parallax">
+        <div id="videoContainer">
+            <div class="video-text parallax-content">
+                <h1>Values</h1>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">KAZAKH MANNERS AND ETIQUETTE</h2>
+    <hr>
+    <div>
+        <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">MAJOR CULTURAL VALUES OF KAZAKHS:</h2>
+        <ul>
+            <li style="margin-left: 20px;">Respect for elders</li>
+            <li style="margin-left: 20px;">Peacefulness and tolerance</li>
+            <li style="margin-left: 20px;">Sociability</li>
+            <li style="margin-left: 20px;">Hospitality</li>
+            <li style="margin-left: 20px;">Desire to live in harmony with surrounding world</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">MEETING PEOPLE</h2>
+        <ul>
+            <li style="margin-left: 20px;">Greetings are rather formal due to the hierarchical nature of society.</li>
+            <li style="margin-left: 20px;">The common greeting is the handshake, often done with both hands and a smile.
+                Since many Kazakhs are Muslim, some men will not shake hands with women, so be sensitive to these
+                religious differences.</li>
+            <li style="margin-left: 20px;">Once you have developed a personal relationship, close friends of the same
+                sex may prefer to hug rather than shake hands.</li>
+            <li style="margin-left: 20px;">Most Kazakhs have a first and patronymic name (the father’s name followed by
+                a suffix -ich or –ovich for son of or daughter of, respectively).</li>
+            <li style="margin-left: 20px;">Wait until invited before using someone’s first name, although the invitation
+                generally comes early in the relationship.</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">GIFT GIVIGN ETIQUETTE</h2>
+        <ul>
+            <li style="margin-left: 20px;">There is not a great deal of protocol in gift giving.</li>
+            <li style="margin-left: 20px;">When invited to someone’s house for dinner, it is polite to bring something
+                for the hostess such as pastries.</li>
+            <li style="margin-left: 20px;">Practising Muslims do not touch alcohol, so do not give alcoholic beverages
+                unless you know your host drinks.</li>
+            <li style="margin-left: 20px;">Gifts are usually opened when received.</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">DINING ETIQUETTE</h2>
+        <ul>
+            <li style="margin-left: 20px;">Kazakhs are very hospitable people and enjoy hosting dinners at their homes.
+            </li>
+            <li style="margin-left: 20px;">You will be served tea and bread, even if you are not invited to a meal.
+                Since Kazakhs consider bread to be sacred, serving bread is a sign of respect.</li>
+            <li style="margin-left: 20px;">When served tea, your cup will often only be filled halfway. To fill the cup
+                would mean that your host wanted you to leave.</li>
+            <li style="margin-left: 20px;">It is not imperative that you arrive on time, although you should not arrive
+                more than 30 minutes late without telephoning first.</li>
+            <li style="margin-left: 20px;">Dress conservatively in clothing you might wear to the office. Kazakhs value
+                dressing well over comfort. To dress too informally might insult your hosts.</li>
+            <li style="margin-left: 20px;">Table manners are not terribly formal in Kazakhstan.</li>
+            <li style="margin-left: 20px;">Table manners are Continental -- the fork is held in the left hand and the
+                knife in the right while eating.</li>
+            <li style="margin-left: 20px;">Some foods are meant to be eaten by hand.</li>
+            <li style="margin-left: 20px;">Your host or another guest may serve you.</li>
+            <li style="margin-left: 20px;">In more rural settings, you may sit on the floor.</li>
+            <li style="margin-left: 20px;">You will be given a bowl to drink broth or tea. When you do not want any
+                more, turn your bowl upside-down as an indication.</li>
+            <li style="margin-left: 20px;">If alcoholic beverages are served, expect a fair amount of toasting.</li>
+            <li style="margin-left: 20px;">Meals are social events. As such, they may take a great deal of time.</li>
+            <li style="margin-left: 20px;">Leave something on your plate when you have finished eating. This
+                demonstrates that you have had enough, whereas if you finish everything it means you are still hungry
+                and you will be served more food.</li>
+            <li style="margin-left: 20px;">Expect to be served second helpings.</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h2 style="font-size: 40px; font-weight: bold; margin-left: 30px;">A SHEEP'S HEAD</h2>
+        <ul>
+            <p style="margin-left: 20px;">In rural settings it is a sign of respect to offer the most honoured guest a
+                boiled sheep's head on a beautiful plate. The guest then divides the food among the guests in the
+                following fashion:</p>
+            <li style="margin-left: 20px;">The ear is given to the smallest child so that he or she will listen to and
+                obey the elders.</li>
+            <li style="margin-left: 20px;">The eyes are given to the two closest friends so that they will take care of
+                the guest.</li>
+            <li style="margin-left: 20px;">The upper palate is given to the daughter-in-law and the tongue to the host’s
+                daughter so both women will hold their tongues.</li>
+            <li style="margin-left: 20px;">The pelvic bones go to the second most respected guest.</li>
+            <li style="margin-left: 20px;">The brisket is given to the son-in-law.</li>
+        </ul>
+    </div>
+    <br>
+    <footer>
+        <p>Author: Akbota Zhaksylyk<br>
+            <a href="mailto:220489@astanait.edu.kz">220489@astanait.edu.kz</a>
+        </p>
+    </footer>
+
+    <!-- for h1 text animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the h1 element
+            var h1Element = document.querySelector('.parallax-content h1');
+
+            // Apply initial styles
+            h1Element.style.opacity = '0';
+            h1Element.style.transform = 'translateY(-20px)';
+
+            // Trigger a reflow (force the browser to repaint)
+            h1Element.offsetHeight;
+
+            // Apply the transition styles for smooth animation
+            h1Element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+            // Apply the final styles for the end state (visible)
+            h1Element.style.opacity = '1';
+            h1Element.style.transform = 'translateY(0)';
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('myVideo');
+            var videoSource = document.getElementById('videoSource');
+            var videoIndex = 0;
+            var videoList = ['a2.mp4'];
+            var transitionDuration = 4000; // 4 seconds per video
+            let isFirst = true;
+            let videoContainer = document.getElementById('videoContainer');
+            for (let video of videoList) {
+                const videoTag = document.createElement('video');
+                videoTag.autoplay = true;
+                videoTag.loop = true;
+                videoTag.muted = true;
+                videoTag.classList.add('myVideo');
+                if (isFirst) {
+                    videoTag.classList.add('video-active');
+                }
+                isFirst = false;
+                const source = document.createElement('source');
+                source.type = 'video/mp4';
+                source.src = video;
+                videoTag.appendChild(source);
+                videoContainer.appendChild(videoTag);
+            }
+
+            function preloadNextVideo() {
+                var nextVideoIndex = (videoIndex + 1) % videoList.length;
+                var nextVideo = new Image();
+                nextVideo.src = videoList[nextVideoIndex];
+            }
+
+            function changeVideo() {
+                // Change the video source
+                videoSource.src = videoList[videoIndex];
+
+                // Load the new video
+                video.load();
+
+                // Wait for the video to be loaded before playing
+                video.addEventListener('loadeddata', function () {
+                    // Play the new video
+                    video.play();
+                });
+
+                // Increment the index for the next video
+                videoIndex = (videoIndex + 1) % videoList.length;
+
+                // Preload the next video for a smooth transition
+                preloadNextVideo();
+
+                // Schedule the next video transition after the current video duration
+                setTimeout(changeVideo, transitionDuration);
+            }
+
+            const videos = document.querySelectorAll('.myVideo');
+
+            setInterval(function () {
+                const activeVideo = document.querySelector('.video-active');
+                activeVideo.classList.remove('video-active');
+                videos[videoIndex].classList.add('video-active');
+                videoIndex++;
+                videoIndex %= videoList.length;
+            }, transitionDuration);
+            // Start the first video
+            // changeVideo();
+        });
+    </script>
+
+    <!-- to make dropdown on navbar clickable -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

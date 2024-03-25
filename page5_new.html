@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        /* Ensure the video covers the entire viewport */
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        .myVideo {
+            object-fit: cover;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #videoContainer {
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .parallax-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .parallax-content h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0;
+        }
+
+        .video-active {
+            z-index: 2;
+        }
+
+        .video-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+        }
+
+        .parallax-content h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0;
+            font-size: 50px;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <title>Quiz</title>
+    <link rel="icon" type="image/x-icon" href="fav.png">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark"
+        style="background: rgba(0, 0, 0, 0.5); color: white; position: fixed; z-index: 9; width: 100%;">
+        <a class="navbar-brand" href="#">Kazakh Culture</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <!-- 1st webpage -->
+                    <a class="nav-link" href="page1_new.html">Main <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <!-- 2nd webpage -->
+                    <a class="nav-link" href="page2_new.html">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Learn more
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- 3rd webpage -->
+                        <a class="dropdown-item" href="page3_new.html">Language</a>
+                        <!-- 4th webpage -->
+                        <a class="dropdown-item" href="page4_new.html">Values</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <!-- 5th webpage -->
+                    <a class="nav-link" href="page5_new.html">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="parallax">
+        <div id="videoContainer">
+            <div class="video-text parallax-content">
+                <h1>Quiz</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="quiz-question" id="question1">
+            <h3>Question 1: What language group does Kazakh belong to?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q1" value="Indo-European"> Indo-European
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q1" value="Altaic"> Altaic
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q1" value="Dravidian"> Dravidian
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q1" value="Afro-Asiatic"> Afro-Asiatic
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question2">
+            <h3>Question 2: The vocabulary of Kazakh has been influenced by</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q2" value="Japanese"> Japanese
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q2" value="Russian"> Russian
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q2" value="Greek"> Greek
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q2" value="English"> English
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question3">
+            <h3>Question 3: What linguistic feature does Kazakh share with some other Turkic languages?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q3" value="Grammatical gender"> Grammatical gender
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q3" value="Vowel harmony"> Vowel harmony
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q3" value="Conjugation"> Conjugation
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q3" value="Inflection"> Inflection
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question4">
+            <h3>Question 4: How many people speak Kazakh as their first or second language across Central Asia?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q4" value="2 million"> 2 million
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q4" value="5 million"> 5 million
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q4" value="8 million"> 8 million
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q4" value="10 million"> 10 million
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question5">
+            <h3>Question 5: What is the largest country in Central Asia where Kazakh is widely spoken?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q5" value="Uzbekistan"> Uzbekistan
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q5" value="Kazakhstan"> Kazakhstan
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q5" value="Turkmenistan"> Turkmenistan
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q5" value="Tajikistan"> Tajikistan
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question6">
+            <h3>Question 6: Which cultural value is highly regarded by Kazakhs?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q6" value="Individualism"> Individualism
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q6" value="Collectivism"> Collectivism
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q6" value="Ambition"> Ambition
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q6" value="Competition"> Competition
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question7">
+            <h3>Question 7: What is the Baikonur Cosmodome known for?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q7" value="Largest library in Kazakhstan"> Largest library in Kazakhstan
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q7" value="Largest market in Kazakhstan"> Largest market in Kazakhstan
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q7" value="Largest space launch facility"> Largest space launch facility
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q7" value="Largest mosque in Kazakhstan"> Largest mosque in Kazakhstan
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question8">
+            <h3>Question 8: What is the common greeting in Kazakh society?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q8" value="Bowing"> Bowing
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q8" value="Hugging"> Hugging
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q8" value="Handshake"> Handshake
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q8" value="Salute"> Salute
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question9">
+            <h3>Question 9: In gift-giving etiquette, what should you bring for the hostess when invited to someone's
+                house for dinner?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q9" value="Alcoholic beverages"> Alcoholic beverages
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q9" value="Flowers"> Flowers
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q9" value="Pastries"> Pastries
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q9" value="Books"> Books
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz-question" id="question10">
+            <h3>Question 10: What is the significance of offering a boiled sheep's head in rural settings?</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q10" value="Symbol of wealth"> Symbol of wealth
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q10" value="Sign of respect"> Sign of respect
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q10" value="Culinary tradition"> Culinary tradition
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="q10" value="Superstition"> Superstition
+                </label>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="submitQuiz()">Submit</button>
+
+        <div id="quizResult"></div>
+    </div>
+
+
+    <footer>
+        <p>Author: Akbota Zhaksylyk<br>
+            <a href="mailto:220489@astanait.edu.kz">220489@astanait.edu.kz</a>
+        </p>
+    </footer>
+
+    <!-- for h1 text animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the h1 element
+            var h1Element = document.querySelector('.parallax-content h1');
+
+            // Apply initial styles
+            h1Element.style.opacity = '0';
+            h1Element.style.transform = 'translateY(-20px)';
+
+            // Trigger a reflow (force the browser to repaint)
+            h1Element.offsetHeight;
+
+            // Apply the transition styles for smooth animation
+            h1Element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+            // Apply the final styles for the end state (visible)
+            h1Element.style.opacity = '1';
+            h1Element.style.transform = 'translateY(0)';
+        });
+    </script>
+
+    <!-- for quiz -->
+    <script>
+        const correctAnswers = {
+            q1: "Altaic",
+            q2: "Russian",
+            q3: "Vowel harmony",
+            q4: "8 million",
+            q5: "Kazakhstan",
+            q6: "Collectivism",
+            q7: "Largest space launch facility",
+            q8: "Handshake",
+            q9: "Pastries",
+            q10: "Sign of respect",
+        };
+
+        function submitQuiz() {
+            const userAnswers = {
+                q1: document.querySelector('input[name="q1"]:checked').value,
+                q2: document.querySelector('input[name="q2"]:checked').value,
+                q3: document.querySelector('input[name="q3"]:checked').value,
+                q4: document.querySelector('input[name="q4"]:checked').value,
+                q5: document.querySelector('input[name="q5"]:checked').value,
+                q6: document.querySelector('input[name="q6"]:checked').value,
+                q7: document.querySelector('input[name="q7"]:checked').value,
+                q8: document.querySelector('input[name="q8"]:checked').value,
+                q9: document.querySelector('input[name="q9"]:checked').value,
+                q10: document.querySelector('input[name="q10"]:checked').value,
+            };
+
+            let score = 0;
+
+            for (const question in userAnswers) {
+                if (userAnswers[question] === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            const resultMessage = `Your Score: ${score}/10\n\nCorrect Answers:\n` +
+                `Question 1: ${correctAnswers.q1}\n` +
+                `Question 2: ${correctAnswers.q2}\n` +
+                `Question 3: ${correctAnswers.q3}\n` +
+                `Question 4: ${correctAnswers.q4}\n` +
+                `Question 5: ${correctAnswers.q5}\n` +
+                `Question 6: ${correctAnswers.q6}\n` +
+                `Question 7: ${correctAnswers.q7}\n` +
+                `Question 8: ${correctAnswers.q8}\n` +
+                `Question 9: ${correctAnswers.q9}\n` +
+                `Question 10: ${correctAnswers.q10}`;
+
+            document.getElementById('quizResult').innerText = resultMessage;
+        }
+    </script>
+
+    <!-- to change videos -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('myVideo');
+            var videoSource = document.getElementById('videoSource');
+            var videoIndex = 0;
+            var videoList = ['f2.mp4']; //had to delete other videos because of memory issues
+            var transitionDuration = 4000; // 4 seconds per video
+            let isFirst = true;
+            let videoContainer = document.getElementById('videoContainer');
+            for (let video of videoList) {
+                const videoTag = document.createElement('video');
+                videoTag.autoplay = true;
+                videoTag.loop = true;
+                videoTag.muted = true;
+                videoTag.classList.add('myVideo');
+                if (isFirst) {
+                    videoTag.classList.add('video-active');
+                }
+                isFirst = false;
+                const source = document.createElement('source');
+                source.type = 'video/mp4';
+                source.src = video;
+                videoTag.appendChild(source);
+                videoContainer.appendChild(videoTag);
+            }
+
+            function preloadNextVideo() {
+                var nextVideoIndex = (videoIndex + 1) % videoList.length;
+                var nextVideo = new Image();
+                nextVideo.src = videoList[nextVideoIndex];
+            }
+
+            function changeVideo() {
+                // Change the video source
+                videoSource.src = videoList[videoIndex];
+
+                // Load the new video
+                video.load();
+
+                // Wait for the video to be loaded before playing
+                video.addEventListener('loadeddata', function () {
+                    // Play the new video
+                    video.play();
+                });
+
+                // Increment the index for the next video
+                videoIndex = (videoIndex + 1) % videoList.length;
+
+                // Preload the next video for a smooth transition
+                preloadNextVideo();
+
+                // Schedule the next video transition after the current video duration
+                setTimeout(changeVideo, transitionDuration);
+            }
+
+            const videos = document.querySelectorAll('.myVideo');
+
+            setInterval(function () {
+                const activeVideo = document.querySelector('.video-active');
+                activeVideo.classList.remove('video-active');
+                videos[videoIndex].classList.add('video-active');
+                videoIndex++;
+                videoIndex %= videoList.length;
+            }, transitionDuration);
+            // Start the first video
+            // changeVideo();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .parallax {
+            /* Set a specific height */
+            min-height: 600px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+
+            /* Add transition property for smooth background image changes */
+            transition: background-image 0.5s ease;
+        }
+
+        .parallax-content h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 0;
+            font-size: 50px;
+        }
+
+        .parallax-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        /* for contacts */
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        /* Style the container/contact section */
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        /* Create two columns that float next to eachother */
+        .column {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+            padding: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .column,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            z-index: 999;
+        }
+
+        #popup:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+
+    <title>Contact</title>
+    <link rel="icon" type="image/x-icon" href="fav.png">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark"
+        style="background: rgba(0, 0, 0, 0.5); color: white; position: fixed; z-index: 9; width: 100%;">
+        <a class="navbar-brand" href="#">Kazakh Culture</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <!-- 1st webpage -->
+                    <a class="nav-link" href="page1_new.html">Main <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <!-- 2nd webpage -->
+                    <a class="nav-link" href="page2_new.html">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Learn more
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- 3rd webpage -->
+                        <a class="dropdown-item" href="page3_new.html">Language</a>
+                        <!-- 4th webpage -->
+                        <a class="dropdown-item" href="page4_new.html">Values</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <!-- 5th webpage -->
+                    <a class="nav-link" href="page5_new.html">Quiz</a>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+
+    <div class="parallax">
+        <div class="parallax-content">
+            <h1>Contacts</h1>
+        </div>
+    </div>
+
+    <!-- Pop-up -->
+    <div id="popup">
+        Click me to go to the Contact Form
+    </div>
+
+    <!-- contact form -->
+    <div style="width: 100%; position: relative; background-color: white; z-index: 5;">
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="text-align:center">
+                <p style="margin-top: 40px; font-weight: bold; font-size: 30px;">Your thoughts matter! Leave us a message or inquiry.</p>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <form id="contactForm">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="kazakhstan">Kazakhstan</option>
+                            <option value="russia">Russia</option>
+                            <option value="usa">USA</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."
+                            style="height:170px"></textarea>
+
+                        <!-- submit -->
+                        <input type="submit" id="submitButton" class="submit-btn" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Author: Akbota Zhaksylyk<br>
+            <a href="mailto:220489@astanait.edu.kz">220489@astanait.edu.kz</a>
+        </p>
+    </footer>
+
+    <!-- for h1 text animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the h1 element
+            var h1Element = document.querySelector('.parallax-content h1');
+
+            // Apply animation styles
+            h1Element.style.opacity = '0';
+            h1Element.style.transform = 'translateY(-20px)';
+
+            // Trigger a reflow (force the browser to repaint)
+            h1Element.offsetHeight;
+
+            // Apply the transition styles for smooth animation
+            h1Element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+            // Apply the final styles for the end state (visible)
+            h1Element.style.opacity = '1';
+            h1Element.style.transform = 'translateY(0)';
+        });
+    </script>
+
+    <!-- to change pictures -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var images = ["p2.jpg", "p3.jpg"];
+            var currentIndex = 0;
+            var parallaxElement = document.querySelector('.parallax');
+
+            function preloadImages() {
+                for (var i = 0; i < images.length; i++) {
+                    new Image().src = images[i];
+                }
+            }
+
+            function changeBackground() {
+                var newImage = new Image();
+                newImage.src = images[currentIndex];
+
+                newImage.onload = function () {
+                    parallaxElement.style.backgroundImage = 'url("' + images[currentIndex] + '")';
+                    currentIndex = (currentIndex + 1) % images.length;
+
+                    setTimeout(changeBackground, 5000); // changing image every 5 seconds
+                };
+            }
+
+            // Preload images before starting the slideshow
+            preloadImages();
+
+            // Start the slideshow
+            changeBackground();
+        });
+    </script>
+
+    <!-- for pop-up -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var popup = document.getElementById('popup');
+            var timeout;
+
+            // Function to show the popup
+            function showPopup() {
+                popup.style.display = 'block';
+            }
+
+            // Function to handle user activity
+            function handleActivity() {
+                clearTimeout(timeout);
+                // hidePopup();
+                timeout = setTimeout(showPopup, 3000);
+            }
+
+            // Function to scroll to the contact form
+            function scrollToContactForm() {
+                var contactForm = document.getElementById('contactForm');
+                contactForm.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Event listeners for user activity
+            document.addEventListener('mousemove', handleActivity);
+            document.addEventListener('keypress', handleActivity);
+
+            // Event listener for click on the popup
+            popup.addEventListener('click', function () {
+                scrollToContactForm();
+            });
+
+            function hidePopup() {
+                popup.style.display = 'none';
+            }
+            // Event listener for click on the popup
+            popup.addEventListener('click', function () {
+                scrollToContactForm();
+                hidePopup(); // Hide the popup after clicking
+            });
+
+            // Initial timeout to show the popup after 3 seconds
+            timeout = setTimeout(showPopup, 3000);
+        });
+    </script>
+
+    <!-- rules for input -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('contactForm');
+            form.addEventListener('submit', function (event) {
+                var fnameInput = document.getElementById('fname');
+                var lnameInput = document.getElementById('lname');
+                var subjectInput = document.getElementById('subject');
+
+                if (!isValidName(fnameInput.value)) {
+                    alert('Please enter a valid first name with only letters.');
+                    event.preventDefault(); // Prevent the form from being submitted
+                } else if (!isValidName(lnameInput.value)) {
+                    alert('Please enter a valid last name with only letters.');
+                    event.preventDefault(); // Prevent the form from being submitted
+                } else if (!containsLetters(subjectInput.value)) {
+                    alert('Please ensure there is at least one word with letters in the message.');
+                    event.preventDefault(); // Prevent the form from being submitted
+                } else {
+                    // All conditions are satisfied, play sound, reset form, and show SweetAlert2 pop-up
+                    const audio = document.getElementById("feedbackSound");
+                    const contactForm = document.getElementById("contactForm");
+
+                    audio.play();
+
+                    // Show SweetAlert2 pop-up
+                    Swal.fire({
+                        title: 'Congratulations!',
+                        text: 'Your message has been submitted successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+
+                    contactForm.reset();
+                    event.preventDefault(); // Prevent form submission for testing
+                }
+            });
+
+            function isValidName(name) {
+                return /^[A-Za-z]+$/.test(name);
+            }
+
+            function containsLetters(message) {
+                return /[A-Za-z]+/.test(message);
+            }
+        });
+    </script>
+
+    <!-- sound code -->
+    <audio id="feedbackSound" preload="auto" src="https://www.fesliyanstudios.com/play-mp3/387"></audio>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- congratulatory animation -->
+
+    <!-- to make dropdown on navbar clickable -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
